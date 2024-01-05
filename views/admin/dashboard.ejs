@@ -1,0 +1,149 @@
+<%- include("../layouts/admin/adminheader")%>
+<section>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Programmers Club</a>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <a class="nav-link active" aria-current="page" href="/admin/home">Home</a>
+              </div>
+            </div>
+          </nav>
+    </header>
+    </section>
+<section>
+<!-- <section>
+    <div class="container">
+        <div class="row">
+            <div class=" col-lg-8">
+        <div class="topsection">
+            <div class="inner_top ">
+                <h1 style="color: aliceblue; margin-left: 100px;">Welcome To Dashboard</h1>
+                <br> -->
+<section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="topsection text-center">
+                        <div class="inner_top">
+                            <h1 style="color: aliceblue;">Dashboard</h1>
+                            <br>                
+                            <% if(rstatus) {%>
+                                    <h5 class="text-danger"><%= rstatus %></h5>
+                            <% }%>
+
+                            <% if(register_success) {%>
+                                <h5 class="text-success"><%= register_success %></h5>
+                            <% }%>
+                            <% if(update_success) {%>
+                                <h5 class="text-success"><%= update_success %></h5>
+                            <% }%>
+                        </div>
+                        <div class="row justify-content-center mb-3 ">
+                            <div class="col-md-6">
+                                <a href="/admin/new_user" class="btn btn-primary btn-block">Add New User</a>
+                            </div>
+                            
+            <!-- </div>
+       <table>
+        <tr><td>
+        <a href="/admin/new_user"><input type="submit" class="btn btn-primary " value="Add New User"></a>
+        </td>
+        <td></td><td></td>
+        <td> -->
+       
+        <!-- </td>
+        </tr>
+        </table>
+
+        <br>
+        <br>
+        </div>
+        <div class="tables"> -->
+        
+    </div>
+</div>
+
+<div class="tables">
+        <table id="userTable" style="margin-left: -190px;" border="1" class="table table-bordered table-dark table-striped-columns  " >
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Image</th>
+                <th>Verified</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+            <tbody class="table-group-divider">
+            <%
+            if(users.length>0)
+            {
+                for(let i=0;i<users.length;i++)
+                {
+                %>
+                <tr>
+                <td><%=users[i].name %></td>
+                <td><%=users[i].email%></td>
+                <td><%=users[i].mobile%></td>
+                <td><img src="/userImages/<%=users[i].image%>" alt="<%=users[i].image%>" width="100px" height="100px"></td>
+                <!-- <td><%=users[i].is_verified%></td> -->
+
+                <td>
+                    <% if(users[i].is_verified){%>
+                            verified
+                    <%}else{%>
+                            not verified
+                    <%}%>
+                </td>
+                <td>
+                    <a href="/admin/edituser?id=<%=users[i]._id%>" class="btn btn-success ">Edit</a>
+                </td>
+                <td>
+                    <a href="/admin/deleteuser?id=<%=users[i]._id%>" class="btn btn-danger">Delete</a>
+                </td>
+                    
+                    <!------------>
+                <%
+                }
+            }
+            %>
+
+        </table>
+        <br>
+        <!-- </div>
+        <a href="/admin/home"><input type="submit" class="btn btn-primary " value="Goto Back"></a>
+        </div>
+        </div>
+    </div>    
+
+</section> -->
+</div>
+<div class="text-center">
+    <a href="/admin/home" class="btn btn-primary mb-3">Goto Back</a>
+</div>
+<div class="text-center">
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+<script>
+    $( function () {
+    $('#userTable').DataTable();
+} );
+</script>
+
+
+<%- include("../layouts/footer")%>
+
+
+<!-- <form action="">
+    <input type="text" name="search">
+    <input type="submit" value="Search">
+</form> -->

@@ -1,0 +1,61 @@
+<%- include("../layouts/admin/adminheader")%>
+<section>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Programmers Club</a>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <a class="nav-link active" aria-current="page" href="/admin/home">Home</a>
+              </div>
+            </div>
+          </nav>
+    </header>
+</section>
+<div class="container">
+    <section>
+    <br>
+    <div class="conatiner">
+
+        <h1 style="color: aliceblue;"> Edit <%=user.name %></h1>
+
+       <br>
+
+       <form action="" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <input type="text" class="form-control" name="name" placeholder="Enter name" value="<%= user.name %>" required>
+        </div>
+        <div class="mb-3">
+            <input type="email" class="form-control" name="email" placeholder="Enter email" value="<%= user.email %>" required>
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" name="mobile" placeholder="Enter mobile" value="<%= user.mobile %>" required>
+        </div>
+        <div class="mb-3">
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" value="0" name="verified" <% if(user.is_verified==0){%> checked <%}%>>
+                <label style="color: aliceblue;" class="form-check-label">Not Verified</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" value="1" name="verified" <% if(user.is_verified==1){%> checked <%}%>>
+                <label style="color: aliceblue;"  class="form-check-label">Verified</label>
+            </div>
+        </div>
+        <input type="hidden" name="id" value="<%= user._id %>">
+        <button type="submit" class="btn btn-success btn-block">Update Profile</button>
+    </form>
+    
+        <br> 
+            <a href="/admin/passwordreset?id=<%=user._id%>"><input type="submit" class="btn btn-primary "  value="Need to change password ?"></a>
+      
+        <br>
+        <br>
+        <a href="/admin/dashboard">Goto Back</a>
+
+        </div>
+
+
+    </section>
+</div>   
+
+
+<%- include("../layouts/footer")%>

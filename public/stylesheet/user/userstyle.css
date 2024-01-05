@@ -1,0 +1,15 @@
+.container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    width: 100vh!important;
+    height: auto; /* Set the container height to full viewport height */
+  
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/image5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

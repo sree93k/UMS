@@ -1,0 +1,27 @@
+<%- include("../layouts/header")%>
+
+<h1>admin Registration Form</h1>
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Enter name">
+    <br><br>
+    <input type="email" name="email" placeholder="Enter email">
+    <br><br>
+    <input type="text" name="mobile" placeholder="Enter mobile">
+    <br><br>
+    <input type="password" name="password" placeholder="Enter password">
+    <br><br>
+    <input type="password" name="password1" placeholder="Re-enter password">
+    <br><br>
+    <input type="submit" value="Admin Register">
+</form>
+
+<%
+if(typeof message !== "undefined"){
+  %>
+<p style="color:green"> <%= message %></p>
+<%
+
+} 
+%>
+
+<%- include("../layouts/admin/adminheader")%>

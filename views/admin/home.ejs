@@ -1,0 +1,51 @@
+<%- include("../layouts/admin/adminheader")%>
+<section>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Programmers Club</a>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <a class="nav-link active" aria-current="page" href="/admin/home">Home</a>
+              </div>
+            </div>
+          </nav>
+    </header>
+    </section>
+<section>
+<section>
+    <div class="container">
+        <h1 style="color: aliceblue;">Admin Home</h1>
+
+        <h2 style="color: aliceblue;">Welcome, <%= admin.name %></h1>
+            <br>
+        <a href="/admin/dashboard" ><input type="submit" class="btn btn-primary " value="Dashboard"></a>
+        <br>
+            <table width="50%">
+                <tr>
+                    <img src="/userImages/<%= admin.image %>" width="150px"  width="150px" alt="<%= admin.image %>">
+                </tr>
+                <tr>
+                    <td style="color: aliceblue;">Admin Name :</td>
+                    <td style="color: aliceblue;"><%= admin.name%></td>
+                </tr>
+                <tr>
+                    <td style="color: aliceblue;">Email ID :</td>
+                    <td style="color: aliceblue;"><%= admin.email%></td>
+                </tr>
+                <tr>
+                    <td style="color: aliceblue;">Mobile Number :</td>
+                    <td style="color: aliceblue;"><%= admin.mobile%></td>
+                </tr>
+                <tr>
+
+                </tr>
+
+            </table>
+
+        <form action="/admin/adminlogout" method="post">
+            <br>
+            <input type="submit" class="btn btn-danger " value="Logout"> 
+        </form>
+    </div>
+</section>
+<%- include("../layouts/footer")%>

@@ -1,0 +1,12 @@
+.container {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    width: 90vh!important;
+    height: auto; /* Set the container height to full viewport height */
+    background-color: rgb(239, 237, 247);
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

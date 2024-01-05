@@ -1,0 +1,56 @@
+<%- include("../layouts/user/userheader.ejs")%>
+
+<section>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Programmers Club</a>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <a class="nav-link active" aria-current="page" href="/user/home">Home</a>
+              </div>
+            </div>
+          </nav>
+    </header>
+    </section>
+<section>
+    <div class="container">
+        <h1 style="color: aliceblue;">Welcome <%= user.name %> </h1>
+
+        <%if(user_update){ %>
+
+            <h3 class="text-success "> <%=user_update %></h3>
+            <%} %>
+        
+
+        <table width="50%">
+            
+            <tr>
+            
+                <td><img src="userImages/<%= user.image %>" width="100px" height="100px" alt="<%= user.image %>"></td>
+            </tr>
+            <tr>
+                <td style="color: aliceblue;"> Name</td>
+                <td style="color: aliceblue;"><%= user.name%></td>
+            </tr>
+            <tr>
+                <td style="color: aliceblue;">Email</td>
+                <td style="color: aliceblue;"><%= user.email%></td>
+            </tr>
+            <tr>
+                <td style="color: aliceblue;">Mobile Number</td>
+                <td style="color: aliceblue;"><%= user.mobile%></td>
+            </tr>
+        </table>
+        <br>
+        <a href="/user/edit?id=<%=user._id %>"><input type="submit" class="btn btn-primary " value="Edit Profile"></a>
+        <br><br>
+        <form action="/user/logout"  method="post">
+            <input type="submit" class="btn btn-danger" value="Logout">
+        </form>
+        <br>
+
+       
+    </div>   
+
+</section>
+<%- include("../layouts/footer") %>

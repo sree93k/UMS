@@ -1,0 +1,52 @@
+<%- include("../layouts/admin/adminheader")%>
+<section>
+  <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Programmers Club</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <a class="nav-link active" aria-current="page" href="/admin/home">Home</a>
+            </div>
+          </div>
+        </nav>
+  </header>
+  </section>
+  <section>
+    <div class="container">
+      <h1 style="color: aliceblue;">Add New User</h1>
+      <br><br>
+      <form action="" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <input type="text" class="form-control" name="name" placeholder="Enter the name" required>
+        </div>
+        <div class="mb-3">
+            <input type="email" class="form-control" name="email" placeholder="Enter the email ID" required>
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" name="mobile" placeholder="Enter the mobile number" required>
+        </div>
+        <div class="mb-3">
+            <input type="file" class="form-control" name="image">
+        </div>
+        <div class="mb-3">
+            <input type="password" class="form-control" name="password" placeholder="Enter the password" required>
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control" name="password1" placeholder="Re-enter password" required>
+      </div>
+        <button type="submit" class="btn btn-primary btn-block">Add New User</button>
+    </form>
+    
+      <%
+      if(typeof message !== "undefined"){
+        %>
+      <p style="color:rgb(186, 28, 20)"> <%= message %></p>
+      <%
+
+      } 
+      %>
+      <br><br>
+      <a href="/admin/dashboard">Goto back</a>
+    </div>
+ </section>
+<%- include("../layouts/footer")%>
